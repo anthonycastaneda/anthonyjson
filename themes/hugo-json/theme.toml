@@ -1,0 +1,15 @@
+name = 'Hugo JSON'
+license = 'MIT'
+licenselink = 'https://git.myco.systems/mycosystems/hugo-maintenance/src/branch/main/LICENSE'
+description = 'Simple maintenance page in the style of JSON'
+
+homepage = 'https://git.myco.systems/mycosystems/hugo-maintenance'
+
+demosite = 'https://hugojson.myco.systems/'
+
+tags = ['dark', 'landing', 'minimal']
+features = ['json', 'dark-mode', 'seo']
+
+[author]
+name = 'MycoSystems'
+homepage = 'https://myco.systems'

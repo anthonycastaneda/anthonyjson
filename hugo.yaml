@@ -1,0 +1,34 @@
+baseURL: https://anthonycastaneda.com/
+theme: hugo-json
+defaultContentLanguage: en
+
+params:
+  openGraph:
+    title: "Anthony Castañeda"
+    image: "https://example.com/opengraph-image.jpg"
+    description: |
+      Mors ultima linea rerum est
+    url: "https://anthonycastaneda.com/"
+
+  title: "Anthony Castañeda"
+  body: 
+    "Nothing is here.  Nothing was ever here."
+  faq:
+    - question: "Why does your website look like this?"
+      answer: "I just like playing with my website.  I also work with JSON a lot."
+    - question: "Do you have any advice?"
+      answer: "I do not."
+    - question: "What DO you do?"
+      answer: "I work with authentication and SSO.  I play drums.  I am a dad.  I like mechanical keyboards and LPs.  I live in East Texas after living in Austin for 20 years.  East Texas is very different than Austin, but it's MUCH easier to park."
+  contact:
+    - service: "e-mail"
+      input: "hello@anthonycastaneda.com"
+
+  asciiArt: 0
+
+  theme: red
+
+disableKinds:
+  - taxonomy
+ignoreErrors:
+  - error-disable-taxonomy

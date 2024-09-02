@@ -1,0 +1,32 @@
+baseURL: https://hugojson.myco.systems/
+theme: hugo-maintenance
+defaultContentLanguage: en
+
+params:
+  openGraph:
+    title: "My Hugo site"
+    image: "https://example.com/opengraph-image.jpg"
+    description: |
+      Welcome to my Hugo site!
+    url: "https://example.com"
+
+  title: "My Hugo site"
+  body: |
+    Welcome to my Hugo site!
+
+  faq:
+    - question: "Why does your website look like this?"
+      answer: "Our pretty looking site is currently under construction!"
+
+  contact:
+    - service: "e-mail"
+      input: "your@email.com"
+
+  asciiArt: 1
+
+  theme: default
+
+disableKinds:
+  - taxonomy
+ignoreErrors:
+  - error-disable-taxonomy

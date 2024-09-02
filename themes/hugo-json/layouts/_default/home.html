@@ -1,0 +1,60 @@
+{{ define "main" }}
+<span class="curly">{</span>
+<main>
+  <div class="one">
+    <div class="flex-row">
+      <span>"title":</span><span> <span class="highlight">"{{ .Site.Params.title }}"</span>,</span>
+    </div>
+    <div class="flex-row">
+      <span>"body":</span>
+      <span> <span class="highlight">"{{ .Site.Params.body }}"</span>,</span>
+    </div>
+    <span class="flex-col">
+      <div>"faq":<span class="square">[</span></div>
+      {{- range $index, $element := .Site.Params.faq }} {{- if ne $index 0 }}
+      <div class="two"><span class="curly">}</span>,</div>
+      {{ end }}
+      <div class="two">
+        <span class="curly">{</span>
+        <div class="three">
+          <div>
+            <span>"Q":</span><span class="highlight">"{{ $element.question }}"</span>,
+          </div>
+          <div>
+            <span>"A":</span><span class="highlight">"{{ $element.answer }}"</span>
+          </div>
+        </div>
+        {{- if eq $index (sub (len $.Site.Params.faq) 1) }}
+        <span class="curly">}</span> {{- end }}
+      </div>
+      {{- end }}
+      <div><span class="square">]</span>,</div>
+    </span>
+    <span class="flex-col">
+      <div>"contact":<span class="curly">{</span></div>
+      {{ $length := len .Site.Params.contact }} {{ range $index, $element :=
+      .Site.Params.contact }}
+      <div class="two">
+        <div class="three contact">
+          <span>"{{ $element.service }}"</span>:
+          <span class="highlight">"{{ $element.input }}"</span>
+          {{ if ne $index (sub $length 1) }},{{ end }}
+        </div>
+      </div>
+      {{ end }}
+      <div><span class="curly">}</span>,</div>
+    </span>
+  </div>
+</main>
+
+<footer class="one">
+  <span>
+    "license":<a class="highlight" href="https://creativecommons.org/licenses/by-sa/4.0">"CC BY-SA 4.0"</a>,
+  </span>
+  <span>
+    "source code":<a class="highlight"
+      href="https://github.com/anthonycastaneda/json">"https://github.com/anthonycastaneda/json"</a>
+  </span>
+</footer>
+<span class="curly">}</span>
+{{ end }}

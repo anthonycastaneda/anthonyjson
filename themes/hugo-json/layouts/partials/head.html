@@ -1,0 +1,23 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<meta property="og:title" content="{{ .Site.Params.opengraph.title }}" />
+<meta property="og:image" content="{{ .Site.Params.opengraph.image }}" />
+<meta
+  property="og:description"
+  content="{{ .Site.Params.opengraph.description | html }}"
+/>
+<meta property="og:url" content="{{ .Permalink }}" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="{{ .Site.Params.opengraph.title }}" />
+<meta
+  name="twitter:description"
+  content="{{ .Site.Params.opengraph.description | html }}"
+/>
+<meta name="twitter:image" content="{{ .Site.Params.opengraph.image }}" />
+
+<title>{{ .Site.Params.opengraph.title }}</title>
+
+<link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
+{{ partialCached "head/css.html" . }}

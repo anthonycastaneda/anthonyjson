@@ -1,0 +1,29 @@
+name: Hugo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: hugo-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+        with:
+          submodules: "true"
+          path: "${{ github.workspace }}/themes/hugo-maintenance"
+      - name: Copy example config
+        run: cp ${{ github.workspace }}/themes/hugo-maintenance/exampleSite/hugo.yaml ${{ github.workspace }}
+      - name: Run build task
+        run: hugo --minify
+      - name: Deploy to Server
+        uses: https://git.myco.systems/mirrors/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvc -i --delete"
+          SOURCE: "public/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
